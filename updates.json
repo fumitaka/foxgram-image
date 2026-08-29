@@ -1,7 +1,18 @@
 {
   "addons": {
     "foxgram-image@fumitaka": {
-      "updates": []
+      "updates": [
+        {
+          "version": "1.0.2",
+          "update_link": "https://github.com/fumitaka/foxgram-image/releases/download/v1.0.2/foxgram-image-1.0.2.xpi",
+          "update_hash": "sha256:a03cb05a109aae128a0e8e394ceece877735bd15f6e7b1d658d4b5a008f6b0d5",
+          "applications": {
+            "gecko": {
+              "strict_min_version": "115.0"
+            }
+          }
+        }
+      ]
     }
   }
 }
