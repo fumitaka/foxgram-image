@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Foxgram Image",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple Firefox extension for saving Instagram images.",
   "browser_specific_settings": {
     "gecko": {
