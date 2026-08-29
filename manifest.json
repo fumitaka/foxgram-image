@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Foxgram Image",
+  "version": "1.0.1",
+  "description": "Simple Firefox extension for saving Instagram images.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "foxgram-image@local",
+      "strict_min_version": "115.0"
+    }
+  },
+  "permissions": [
+    "contextMenus",
+    "downloads"
+  ],
+  "host_permissions": [
+    "*://*.instagram.com/*",
+    "*://instagram.com/*",
+    "*://*.cdninstagram.com/*",
+    "*://*.fbcdn.net/*"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.instagram.com/*",
+        "*://instagram.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
