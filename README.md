@@ -1,32 +1,44 @@
 # Foxgram Image
 
-Instagram の画像を Firefox の右クリックメニューから保存する軽量アドオン。
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:center">English</th>
+      <th style="text-align:center"><a href="README_ja.md">日本語</a></th>
+    </tr>
+  </thead>
+</table>
 
-## 方針
+A lightweight Firefox extension for saving Instagram images from the context menu.
 
-- Instagram の DOM / オーバーレイは変更しない
-- 右クリック座標の下にある `<img>` を検出して URL を取る
-- 可能なら `srcset` の最大幅候補を使う
+## Design
 
-## 開発用インストール
+- Does not modify Instagram's DOM or overlays
+- Detects the `<img>` underneath the right-click position and retrieves its URL
+- Uses the largest available `srcset` candidate when possible
 
-1. Firefox で `about:debugging#/runtime/this-firefox` を開く
-2. 「一時的なアドオンを読み込む」
-3. このフォルダの `manifest.json` を選ぶ
-4. **すでに開いている Instagram のタブを再読み込みする**
-5. 画像の上で右クリック
-   - Instagram 画像を保存
-   - Instagram 画像を新しいタブで開く
+## Development Install
 
-一時アドオンは Firefox 終了で消えます。
+1. Open `about:debugging#/runtime/this-firefox` in Firefox
+2. Click **Load Temporary Add-on**
+3. Select `manifest.json` in this repository
+4. **Reload any Instagram tabs that were already open**
+5. Right-click an image and choose:
+   - **Instagram 画像を保存**
+   - **Instagram 画像を新しいタブで開く**
 
-## ファイル
+Temporary add-ons are removed when Firefox exits.
+
+## Files
 
 - `manifest.json`
 - `background.js`
 - `content.js`
 
-## 注意
+## Notes
 
-インストール直後は content script が入っていないため、Instagram をリロードする必要があります。
-画像本体は `cdninstagram.com` / `fbcdn.net` にあるため、そのホスト権限がないと `downloads` が失敗することがあります。
+Instagram must be reloaded after installing the extension so that the content script is injected into the page.
+
+Image files are typically served from `cdninstagram.com` or `fbcdn.net`, so the extension includes host permissions for those domains to allow downloads.
+
+Please respect copyright and the terms of use of the content you save.
